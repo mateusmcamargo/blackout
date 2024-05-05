@@ -11,6 +11,7 @@ var _left, _right, _jump, _jump_d, _duck, _up, _down, //inputs
 	_list, _rand, _pitch;							  //sounds	
 
 //inputs
+// Feather disable GM1044
 _left   = input_check("left");
 _right  = input_check("right");
 _duck   = input_check("duck");
@@ -31,7 +32,7 @@ var _map_id = layer_tilemap_get_id(_lay_id);
 var _b = 8 * sign(image_xscale);
 var _x = x - _b;
 	
-var _x      = tilemap_get_cell_x_at_pixel(_map_id, x, y);
+_x      = tilemap_get_cell_x_at_pixel(_map_id, x, y);
 var _y      = tilemap_get_cell_y_at_pixel(_map_id, x, y + 1);
 var _data   = tilemap_get(_map_id, _x, _y);	
 	
@@ -85,7 +86,7 @@ if (can_move) {
 			state = "fall"
 		} else {
 			state = "jump";
-			var _rand = irandom_range(5, 10);
+			_rand = irandom_range(5, 10);
 			part_particles_create(obj_particle.part_system, x, y, obj_particle.part_jump_left,  _rand);
 			part_particles_create(obj_particle.part_system, x, y, obj_particle.part_jump_right, _rand);
 		}
@@ -101,7 +102,7 @@ if (can_move) {
 		ystart_jump = y;
 		
 		//jump audio
-		var _pitch = random_range(.8, 1.2);
+		_pitch = random_range(.8, 1.2);
 		if (!audio_is_playing(snd_jump)) {
 			audio_play_sound(snd_jump, 3, 0, 1, 0, _pitch);
 		}
@@ -212,7 +213,7 @@ switch(state) {
 			//instance_create_layer(x, y, "Effects", obj_effect,{sprite_index: _s,image_xscale: -1});
 			
 			//particles
-			var _rand = irandom_range(5, 10);
+			_rand = irandom_range(5, 10);
 			part_particles_create(obj_particle.part_system, x-5, y, obj_particle.part_land_left,  _rand);
 			part_particles_create(obj_particle.part_system, x+5, y, obj_particle.part_land_right, _rand);
 			

@@ -13,7 +13,7 @@ global.view_height = global.res_height / global.view_scale;
 global.view_speed  = 0.12;
 
 //look up and down
-global.look_height = global.view_width/2;
+global.look_height = 16 * 10;
 
 //set window, gui and survace sizes
 window_set_size(global.view_width * global.view_scale, global.view_height * global.view_scale);

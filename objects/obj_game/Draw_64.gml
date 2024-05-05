@@ -198,8 +198,9 @@ if (mouse_check_button(mb_left)) {
 	var _x2 = floor(_mouse_x);
 		_y2 = floor(_mouse_y);
 	
-	draw_rectangle(floor(_x1), floor(_y1), floor(_x2), floor(_y2), true);
-	
+	if (_x1 % 5 == 0) {
+		draw_rectangle(floor(_x1), floor(_y1), floor(_x2), floor(_y2), true);
+	}
 	var _x1_d = floor(draw_selection_x1 / global.view_scale);
 	var _y1_d = floor(draw_selection_y1 / global.view_scale);
 	var _x2_d = floor(_mouse_x		    / global.view_scale);

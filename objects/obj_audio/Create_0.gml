@@ -1,54 +1,18 @@
-#region MACROS
-
-#macro AUDIO_ARRAY_PLAYER_LAND_STONE  snd_land_concrete_1 snd_land_concrete_2
-#macro AUDIO_ARRAY_PLAYER_WALK_STONE  snd_walk_concrete_1 snd_walk_concrete_2, snd_walk_concrete_3
-
-#endregion
-
-#region AUDIO GROUPS
-
-
-
-#endregion
-
 #region VARIABLES
 
 var _list_name, _list_assets, _list_size,
 	_sfx,
-	_sfx1, _sfx2, _sfx3, _sfx4, _sfx5, 
+	_sfx1, _sfx2, _sfx3, _sfx4, _sfx5; 
 
 #endregion
 
 #region DATA STRUCTURES
 
-/*
-//create list
-global.audio_list_sfx = ds_list_create();
-_list_name = global.audio_list_sfx;
-
-//create a struct for each sound and add it to the list
-_sfx1 = {id: snd_run_concrete_1};
-_sfx2 = {id: snd_run_concrete_2};
-_sfx3 = {id: snd_land_concrete_1};
-_sfx4 = {id: snd_land_concrete_2};
-_sfx5 = {id: snd_land_concrete_3};
-
-//add each sound to the list
-ds_list_add(_list_name, _sfx1);
-ds_list_add(_list_name, _sfx2);
-ds_list_add(_list_name, _sfx3);
-ds_list_add(_list_name, _sfx4);
-ds_list_add(_list_name, _sfx5);
-*/
-
 // --------------------------------------------------------- \\
 
 /*
-
 ***** NOTE *****
-
 transform _list_assets in arrays, instead of using audio groups (maybe)
-
 */
 
 //create list

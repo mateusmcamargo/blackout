@@ -1,3 +1,4 @@
+// Feather disable GM2017
 randomize();
 
 if (!instance_exists(obj_audio))      {instance_create_layer(-32, -32, "Game", obj_audio)}
@@ -56,7 +57,7 @@ global.player_dead = false;
 #endregion
 
 #region ITEMS
-
+// Feather disable once GM2017
 num_items = 3;
 global.items    = array_create(num_items);
 global.items[0] = item_struct("diamond", spr_diamond, obj_diamond, global.diamond, spr_diamond_ui);

@@ -19,10 +19,15 @@ if (instance_exists(target)) {
 	
 	if (target.state == "idle" or target.state == "duck") {
 		//look up
-		if (input_check("up"))   {_y1 = lerp(_y1, _y1 -global.view_height, global.view_speed);}
-		
+		if (input_check("up")) {
+			_y1 = lerp(_y1, _y1 -global.look_height, global.view_speed);
+			if (_y1 <= 0) {_y1 = 0}
+		}
 		//look down
-		if (input_check("down")) {_y1 = lerp(_y1, _y1 +global.view_height, global.view_speed);}
+		if (input_check("down")){
+			_y1 = lerp(_y1, _y1 +global.look_height, global.view_speed);
+			if (_y1 >= 160) {_y1 = 160}
+		}
 	}
 	
 	//screenshake
@@ -45,4 +50,6 @@ if (instance_exists(target)) {
 	
 	//set camera position
 	camera_set_view_pos(view_camera[0], lerp(_c_x, _x1, global.view_speed), lerp(_c_y, _y1, global.view_speed));
+	show_debug_message(string_concat("view y: ", _y1, " | ", "room height: ", room_height));
+	show_debug_message(string_concat("clamp: ", 0, ", ", room_height));
 }

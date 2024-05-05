@@ -23,13 +23,18 @@ function audio_group_is_playing(_audio_group_ds){
 // a random list item and uses its id to play the sound
 function audio_list_get_random(_list_name) {
 	
-	var _list = {name: _list_name, size: noone, index: noone, value: noone}
+	var _list = {
+		nam: _list_name,
+		siz: real,
+		ind: real,
+		val: real
+		}
 
-	_list.size  = ds_list_size(_list.name);
-	_list.index = irandom(_list.size - 1);
-	_list.value = ds_list_find_value(_list.name, _list.index);
+	_list.siz = ds_list_size(_list.nam);
+	_list.ind = irandom(_list.siz - 1);
+	_list.val = ds_list_find_value(_list.nam, _list.ind);
 	
-	return _list.value;
+	return _list.val;
 		
 }
 /*
