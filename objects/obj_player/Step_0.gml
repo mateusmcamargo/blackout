@@ -86,6 +86,8 @@ if (can_move) {
 			state = "fall"
 		} else {
 			state = "jump";
+			
+			//particles
 			_rand = irandom_range(5, 10);
 			part_particles_create(obj_particle.part_system, x, y, obj_particle.part_jump_left,  _rand);
 			part_particles_create(obj_particle.part_system, x, y, obj_particle.part_jump_right, _rand);
@@ -252,7 +254,10 @@ switch(state) {
 			}
 		
 		}
-		if (vspd < 0) {state = "jump"			for (var _i = 0; _i < array_length(_grass); _i ++) {
+		if (vspd < 0) {
+			state = "jump";
+		
+			for (var _i = 0; _i < array_length(_grass); _i ++) {
 				if (tile_map_index == _grass[_i]) {
 					_list  = global.audio_list_sfx_land_grass;
 					_rand  = audio_list_get_random(_list);
@@ -283,7 +288,8 @@ switch(state) {
 					_pitch = random_range(.8, .6);
 					if (!audio_group_is_playing(_list)) {audio_play_sound(_rand.id, 1, 0, 1, 0, _pitch)}
 				}
-			}}
+			}
+		}
 	break;
 	
 	case "ladder":
